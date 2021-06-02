@@ -36,7 +36,6 @@ nav {
 
 form {
 	background-color: var(--bc-secondary);
-	width: 15%;
 	display: flex;
 	align-items: center;
 }
@@ -97,6 +96,24 @@ h2 {
 
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@media screen and (max-width: 700px) {
+	* {
+		font-size: medium;
+	}
+
+	form {
+		width: 40%;
+	}
+
+	.undo-search {
+		font-size: large;
+	}
+
+	.search-bar {
+		padding: 0.25rem 0.5rem;
 	}
 }
 

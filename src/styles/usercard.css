@@ -35,3 +35,20 @@ h3 {
 	right: 2%;
 	cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+	.user-image {
+		height: 10vh;
+	}
+
+	h3,
+	span {
+		font-size: 3vw;
+	}
+	.user-details {
+		margin: 0rem 0.5rem;
+	}
+	.add-user {
+		font-size: small;
+	}
+}
