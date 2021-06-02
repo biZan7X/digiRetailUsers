@@ -43,6 +43,7 @@ form {
 
 .undo-search {
 	background-color: var(--bc-secondary);
+	font-size: x-large;
 }
 .undo-search:hover {
 	cursor: pointer;

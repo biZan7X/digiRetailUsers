@@ -48,6 +48,10 @@ function App() {
 		setSearchTerm("");
 	};
 
+	const onClickHandler = () => {
+		setUsers(userData);
+	};
+
 	const renderUsers = () => {
 		if (users) {
 			if (users.length > 0)
@@ -75,7 +79,7 @@ function App() {
 					<FontAwesomeIcon
 						className="undo-search"
 						icon={faUndoAlt}
-						size="1x"
+						onClick={onClickHandler}
 					/>
 					<input
 						className="search-bar"
