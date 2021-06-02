@@ -4,11 +4,12 @@ import UserCard from "./components/UserCard";
 import "./styles/app.css";
 //& icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faUndoAlt } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
 	const [userData, setUserData] = useState([]);
 	const [users, setUsers] = useState([]);
+	const [searchTerm, setSearchTerm] = useState("");
 
 	//* componentDidMount
 	useEffect(() => {
@@ -32,24 +33,59 @@ function App() {
 
 	useEffect(() => setUsers(userData), [userData]);
 
-	const renderUsers = () => {
-		if (users)
-			return users.map((user) => <UserCard user={user} key={user.id} />);
+	const onSubmitHandler = (e) => {
+		e.preventDefault();
 
-		return <h2>Loading...</h2>;
+		let term = searchTerm;
+		term = term.trim();
+
+		if (term === "" || term === " ") return;
+
+		const tempUsers = userData.filter((user) =>
+			user.firstName.toLowerCase().includes(term)
+		);
+		setUsers(tempUsers);
+		setSearchTerm("");
+	};
+
+	const renderUsers = () => {
+		if (users) {
+			if (users.length > 0)
+				return users.map((user) => <UserCard user={user} key={user.id} />);
+			else
+				return (
+					<div className="message">
+						<h2>No such users found...</h2>
+					</div>
+				);
+		}
+
+		return (
+			<div className="message">
+				<h2>Loading</h2>
+			</div>
+		);
 	};
 
 	return (
 		<div className="App">
 			<nav>
 				<h2 className="title">DigiRetail Users</h2>
-				<form>
+				<form onSubmit={onSubmitHandler}>
 					<FontAwesomeIcon
-						className="search-icon"
-						icon={faSearch}
+						className="undo-search"
+						icon={faUndoAlt}
 						size="1x"
 					/>
-					<input className="search-bar" type="text" />
+					<input
+						className="search-bar"
+						placeholder={`search users... 🔍`}
+						type="text"
+						value={searchTerm}
+						onChange={(e) => {
+							setSearchTerm(e.target.value);
+						}}
+					/>
 				</form>
 			</nav>
 			<section>{renderUsers()}</section>

@@ -41,8 +41,12 @@ form {
 	align-items: center;
 }
 
-.search-icon {
+.undo-search {
 	background-color: var(--bc-secondary);
+}
+.undo-search:hover {
+	cursor: pointer;
+	animation: rotate-animation 1s ease-in-out;
 }
 .search-bar {
 	margin-left: 1rem;
@@ -70,6 +74,29 @@ section {
 span {
 	color: var(--fc-primary);
 	background-color: transparent;
+}
+
+.message {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+}
+
+h2 {
+	background-color: transparent;
+}
+
+@keyframes rotate-animation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 *::-webkit-scrollbar {
