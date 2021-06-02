@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+	--bc-primary: #18191a;
+	--bc-secondary: #333435;
+	--fc-primary: #61dafb;
+	--fc-secondary: white;
+}
+
+* {
+	box-sizing: border-box;
+	background-color: var(--bc-primary);
+	color: var(--fc-secondary);
+	padding: 0;
+	margin: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+.App {
+	height: 100vh;
+}
+
+nav {
+	background-color: var(--bc-secondary);
+	width: 100%;
+	height: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+}
+
+.title {
+	background-color: var(--bc-secondary);
+	color: var(--fc-primary);
+}
+
+form {
+	background-color: var(--bc-secondary);
+	width: 15%;
+	display: flex;
+	align-items: center;
+}
+
+.search-icon {
+	background-color: var(--bc-secondary);
+}
+.search-bar {
+	margin-left: 1rem;
+	padding: 0.5rem 0.75rem;
+	border: var(--fc-primary) solid 0.15rem;
+	border-radius: 2rem;
+	color: var(--fc-secondary);
+	width: 100%;
+}
+
+.search-bar:focus {
+	outline: none;
+	border: var(--fc-primary) solid 0.22rem;
+}
+
+section {
+	background-color: var(--bc-secondary);
+	height: 80%;
+	width: 90%;
+	margin: 2rem auto;
+	border-radius: 3rem;
+	overflow: auto;
+}
+
+span {
+	color: var(--fc-primary);
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 8px;
+}
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgba(155, 155, 155, 0.7);
+	border-radius: 20px;
+	border: transparent;
+}
