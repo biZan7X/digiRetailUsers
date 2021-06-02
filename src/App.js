@@ -41,7 +41,7 @@ function App() {
 		e.preventDefault();
 
 		let term = searchTerm;
-		term = term.trim();
+		term = term.trim().toLowerCase();
 
 		if (term === "" || term === " ") return;
 
