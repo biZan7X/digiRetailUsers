@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&family=Prompt:ital@1&display=swap");
 :root {
 	--bc-primary: #18191a;
 	--bc-secondary: #333435;
@@ -32,6 +33,8 @@ nav {
 .title {
 	background-color: var(--bc-secondary);
 	color: var(--fc-primary);
+	font-family: "Pattaya", sans-serif;
+	font-family: "Prompt", sans-serif;
 }
 
 form {

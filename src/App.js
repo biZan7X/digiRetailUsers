@@ -5,6 +5,10 @@ import "./styles/app.css";
 //& icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndoAlt } from "@fortawesome/free-solid-svg-icons";
+//& framer motion
+import { motion } from "framer-motion";
+//& animation
+import { sectionAnimation } from "./animation";
 
 function App() {
 	const [userData, setUserData] = useState([]);
@@ -92,7 +96,13 @@ function App() {
 					/>
 				</form>
 			</nav>
-			<section>{renderUsers()}</section>
+			<motion.section
+				variants={sectionAnimation}
+				initial="hidden"
+				animate="show"
+			>
+				{renderUsers()}
+			</motion.section>
 		</div>
 	);
 }

@@ -4,10 +4,14 @@ import "../styles/usercard.css";
 //& icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+//& framer motion
+import { motion } from "framer-motion";
+//& animation
+import { userAnimation } from "../animation";
 
 const UserCard = ({ user }) => {
 	return (
-		<div className="user-card">
+		<motion.div variants={userAnimation} className="user-card">
 			<img className="user-image" src={user.picture} alt="user" />
 			<div className="user-details">
 				<h3>
@@ -20,7 +24,7 @@ const UserCard = ({ user }) => {
 				</h3>
 			</div>
 			<FontAwesomeIcon className="add-user" icon={faUserPlus} size="2x" />
-		</div>
+		</motion.div>
 	);
 };
 
