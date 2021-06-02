@@ -10,7 +10,7 @@ export const sectionAnimation = {
 		transition: {
 			duration: 1,
 			when: "beforeChildren",
-			staggerChildren: 1,
+			staggerChildren: 0.5,
 		},
 	},
 
@@ -25,6 +25,6 @@ export const userAnimation = {
 	hidden: { y: 200 },
 	show: {
 		y: 0,
-		transition: { duration: 1, ease: "easeOut" },
+		transition: { duration: 0.75, ease: "easeOut" },
 	},
 };
